@@ -36,9 +36,12 @@ public class MethodTransformer {
 
 	public void transform() throws AnalyzerException {
 		new IteratorGenerator(outerClassNode, methodNode).generate(processor);
-		new IterableGenerator(outerClassNode, methodNode).generate(processor);
-
-		String iterableClassName = outerClassNode.name + "$" + methodNode.name + "$Iterable";
+		String iterableClassName = outerClassNode.name + "$" + methodNode.name + "$Iterator";
+		
+		if (methodNode.desc.endsWith(")Ljava/lang/Iterable;")) {
+			new IterableGenerator(outerClassNode, methodNode).generate(processor);
+			iterableClassName = outerClassNode.name + "$" + methodNode.name + "$Iterable";
+		}
 
 		Type[] arguments = Type.getArgumentTypes(methodNode.desc);
 
