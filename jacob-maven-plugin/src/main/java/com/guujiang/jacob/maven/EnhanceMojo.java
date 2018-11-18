@@ -49,7 +49,7 @@ public class EnhanceMojo extends AbstractMojo implements IntermediateClassProces
 
 		PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:**/*.class");
 		try {
-			Files.walk(Paths.get(build.getOutputDirectory()))
+			Files.walk(Paths.get(classesDir(build)))
 				.filter(Files::isRegularFile)
 				.filter(f -> matcher.matches(f))
 				.forEach(this::enhance);
@@ -58,10 +58,14 @@ public class EnhanceMojo extends AbstractMojo implements IntermediateClassProces
 		}
 		
 		try {
-			FileUtils.copyDirectory(tempDir, new File(build.getOutputDirectory()));
+			FileUtils.copyDirectory(tempDir, new File(classesDir(build)));
 		} catch (IOException e) {
 			throw new MojoExecutionException("failed to write generated classes back", e);
 		}
+	}
+
+	protected String classesDir(Build build) {
+		return build.getOutputDirectory();
 	}
 
 	private void enhance(Path path) {
