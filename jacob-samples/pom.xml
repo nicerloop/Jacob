@@ -4,14 +4,14 @@
 	<parent>
 		<groupId>com.guujiang</groupId>
 		<artifactId>jacob</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 	</parent>
 	<artifactId>jacob-samples</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>com.guujiang</groupId>
 			<artifactId>jacob-core</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.2</version>
 		</dependency>
 	</dependencies>
 	
@@ -20,7 +20,7 @@
 			<plugin>
 				<groupId>com.guujiang</groupId>
 				<artifactId>jacob-maven-plugin</artifactId>
-				<version>0.0.1</version>
+				<version>0.0.2</version>
 				<executions>
 					<execution><?m2e execute onConfiguration,onIncremental?>
 						<goals>
