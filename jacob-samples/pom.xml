@@ -22,7 +22,7 @@
 				<artifactId>jacob-maven-plugin</artifactId>
 				<version>0.0.1</version>
 				<executions>
-					<execution>
+					<execution><?m2e execute onConfiguration,onIncremental?>
 						<goals>
 							<goal>enhance</goal>
 						</goals>
