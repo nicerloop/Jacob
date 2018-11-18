@@ -8,7 +8,7 @@ A lightweight library to provide coroutines in Java
 <dependency>
     <groupId>com.guujiang</groupId>
     <artifactId>jacob-core</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
@@ -50,7 +50,7 @@ add the following plugin to your maven project's pom.xml.
 <plugin>
     <groupId>com.guujiang</groupId>
     <artifactId>jacob-maven-plugin</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <executions>
         <execution>
             <goals>
